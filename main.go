@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/alecthomas/template"
 	_ "github.com/mattn/go-sqlite3"
 
 	"github.com/gorilla/mux"
@@ -47,9 +48,39 @@ func ArchivesHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "thanks: %v\n", vars["category"])
 }
 
+func TestTemplateHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	log.Println(vars)
+	w.WriteHeader(http.StatusOK)
+
+	data := struct {
+		PageTitle string
+		Todos     []struct {
+			Title string
+			Done  bool
+		}
+	}{
+		PageTitle: "My TODO list",
+		Todos: []struct {
+			Title string
+			Done  bool
+		}{
+			{Title: "Task 1", Done: false},
+			{Title: "Task 2", Done: true},
+			{Title: "Task 3", Done: true},
+		},
+	}
+
+	testTemplate.Execute(w, data)
+}
+
 var (
 	siteAddress         = "https://testdomain.com"
 	localAddressAndPort = "127.0.0.1:8000"
+
+	// Templates
+
+	testTemplate = template.Must(template.ParseFiles("templates/testing.html"))
 )
 
 func main() {
@@ -74,9 +105,10 @@ func main() {
 	r.HandleFunc("/thankyou", ThanksHandler).Methods("POST")
 	r.HandleFunc("/latest", LatestHandler)
 	r.HandleFunc("/archives", ArchivesHandler)
+	r.HandleFunc("/testing", TestTemplateHandler)
 
 	// This will serve files under http://localhost:8000/static/<filename>
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("/static/"))))
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static/"))))
 
 	srv := &http.Server{
 		Handler: r,
