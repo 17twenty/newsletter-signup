@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dart Weekly</title>
+  <link rel="alternate" type="application/rss+xml" title="Dart Weekly" href="/rss/1eb164c3" />
+</head>
+<body class="webops dom dom-webops issues bareissue">
+<main><div class="issue-html"><body>
+
+
+  
+  
+	
+	
+<style>body {
+margin: 0; padding: 0; min-width: 100% !important; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+}
+img {
+outline: none; -ms-interpolation-mode: bicubic; border: 0;
+}
+body.itemstyle2 table.item td.main {
+font-size: 13px; font-family: verdana, tahoma, ubuntu, "Helvetica Neue", Helvetica, arial, sans-serif; line-height: 1.4em; color: #666; font-weight: 300;
+}
+body.itemstyle2 table.item td.main a {
+text-decoration: none;
+}
+body.itemstyle2 table.item td.main a.primary {
+font-size: 19px; font-family: "Helvetica Neue", Helvetica, arial, sans-serif; line-height: 1.26em; font-weight: 500;
+}
+body.itemstyle2 table.item td.main a.main {
+font-size: 19px; font-family: "Helvetica Neue", Helvetica, arial, sans-serif; line-height: 1.26em; font-weight: 500;
+}
+body.itemstyle3 table.item td.main {
+font-size: 13px; font-family: verdana, tahoma, ubuntu, "Helvetica Neue", Helvetica, arial, sans-serif; line-height: 1.4em; color: #666; font-weight: 300;
+}
+body.itemstyle3 table.item td.main a {
+text-decoration: none;
+}
+body.itemstyle3 table.item td.main a.primary {
+font-size: 19px; font-family: "Helvetica Neue", Helvetica, arial, sans-serif; line-height: 1.4em; font-weight: 500;
+}
+body.itemstyle3 table.item td.main a.main {
+font-size: 19px; font-family: "Helvetica Neue", Helvetica, arial, sans-serif; line-height: 1.4em; font-weight: 500;
+}
+body.metadatagap .issuemetadata {
+margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .fullwidthlogo .logo {
+    width: auto !important;
+  }
+  .nomo {
+    display: none !important;
+  }
+  .mobileshow {
+    display: block !important;
+  }
+  .ilblock {
+    display: block !important; width: 100%;
+  }
+  p.letter {
+    padding-left: 0; border-left: 0px none;
+  }
+  .buttononmobile {
+    font-size: 15px; color: #fff !important; text-decoration: none; background-color: #5D9CEC; border-top: 15px solid #5D9CEC; border-bottom: 15px solid #5D9CEC; border-left: 20px solid #5D9CEC; border-right: 20px solid #5D9CEC; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; width: 100%; text-align: center; box-sizing: border-box; margin: 6px 0;
+  }
+  .buttononmobile.red {
+    background-color: #a66; border-color: #a66;
+  }
+  .buttononmobile.yellow {
+    background-color: #aa6; border-color: #aa6;
+  }
+  .buttononmobile.green {
+    background-color: #68a; border-color: #68a;
+  }
+  .buttononmobile:after {
+    content: ' \2192';
+  }
+  .footer {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 601px) {
+  table.container {
+    width: 600px !important;
+  }
+  div.container {
+    width: 600px !important;
+  }
+}
+</style>
+
+
+
+
+
+
+
+<center><table align="center" style='text-align: center; margin: 8px 0 0; padding: 0; font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;' class="text header">
+  <tr><td align="center" style="border-collapse: collapse; margin: 0; padding: 0;">
+  <div class="logo" style="font-size: 26px; font-weight: 500; margin: 0 0 8px; padding: 0;"><a target="_blank" href="https://webopsweekly.com/link/36922/web" style="color: #07a;"><img src="https://webopsweekly.com/images/webops-header.png" alt="Dart Weekly" title="Dart Weekly" width="320" style="max-width: 100%; outline: none; -ms-interpolation-mode: bicubic; width: 320px; margin: 0 auto; border: 0;" border="0"></a></div>
+  
+  <div class="issuemetadata" style="font-size: 16px; color: #aaa; margin: 0 0 6px; padding: 0;">Issue 155 — February 28, 2018</div>
+  </td></tr>
+</table></center>
+
+<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td style="border-collapse: collapse; margin: 0; padding: 8px 8px 1em;">
+<!--[if mso]>
+	<center>
+  <table id="tableoutlook" width="600" style="width: 600px;"><tr><td>
+<![endif]-->
+<table class="container bigheadings itemstyle22 webops" align="center" width="100%" cellpadding="0" cellspacing="0" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; padding: 0px; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed; width: 100%; max-width: 600px;'>
+  <tr>
+    <td style="border-collapse: collapse; margin: 0; padding: 0;">
+      <table class="section section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  
+  <tr>
+    <td class="contents" style="border-collapse: collapse; margin: 0; padding: 0;">
+      <table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36923/web" title="developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/" style="color: #07a; text-decoration: underline;">A Practical Introduction to Container Terminology</a>  <span class="tag tag-tutorial" style="background-color: #2a5; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tutorial </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">The world of containers has introduced a lot of new terms and phrases to developers and sysadmins alike. This post digs into some common terms that are often misunderstood.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Scott McCarty </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36924/web" title="www.phoronix.com/scan.php?page=article&amp;item=cloud-cpu-36&amp;num=1#cloudcpus" style="color: #07a; text-decoration: underline;">A 36-Way Comparison of Cloud CPUs vs Bare Metal</a>  <span class="tag tag-opinion" style="background-color: #970; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> opinion </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">A thorough benchmark comparing compute power as offered by Amazon EC2, Google Compute Engine, Azure Cloud Instances, and bare Intel and AMD CPUs. Bare metal and the largest EC2 instances seem to win the day on <a target="_blank" href="https://webopsweekly.com/link/36925/web" style="color: #07a;">the Web-oriented tests.</a>
+</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Phoronix </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr>
+<td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36926/web" title="www.sqreen.io/?utm_medium=email&amp;utm_source=external&amp;utm_campaign=WebOpsWeekly%20-%20email%20-%20Security%20Orchestration" style="color: #07a; text-decoration: underline;">Inspect, Detect, Respond: Orchestrate Your App Security</a> </div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">Get full visibility into your app security, get alerted on critical issues and easily build automated responses against security threats.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Sqreen  <span class="tag tag-sponsored" style="background-color: #ffffff !important; padding: 0px 2px; border: 1px solid #090; font-size: 0.9em; color: #090 !important; line-height: 16px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal; border-radius: 2px;"> sponsored </span>
+</div></td></tr>
+</table>
+</td>
+<td valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1em;"><a target="_blank" href="https://webopsweekly.com/link/36926/web" style="color: #07a;"><img src="https://copm.s3.amazonaws.com/fc6a3daa.png" width="183" height="50" class="item" style="outline: none; -ms-interpolation-mode: bicubic; margin-left: 8px; max-height: 133px; border: 0;"></a></td>
+</tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36927/web" title="github.com/zricethezav/gitleaks" style="color: #07a; text-decoration: underline;">GitLeaks: Check Git Repos and History for Secrets and Keys</a>  <span class="tag tag-tools" style="background-color: #589; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tools </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">Worried you’ve got things like AWS details, GitHub tokens or SSH keys hanging around your project’s git history? Find out for sure with this Go-based tool.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Zachary Rice </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36928/web" title="arstechnica.com/information-technology/2018/02/in-the-wild-ddoses-use-new-way-to-achieve-unthinkable-sizes/" style="color: #07a; text-decoration: underline;">In-the-Wild DDoSes Use New Way to Achieve Unthinkable Sizes</a>  <span class="tag tag-story" style="background-color: #0bc; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> story </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">A new DDoS approach leaning on the <a target="_blank" href="https://webopsweekly.com/link/36929/web" style="color: #07a;">memcached</a> caching server and IP-spoofed UDP packets. More detail in <a target="_blank" href="https://webopsweekly.com/link/36930/web" style="color: #07a;">Cloudflare’s writeup here.</a> Secure your memcached servers ASAP.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Ars Technica </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36931/web" title="aws.amazon.com/blogs/aws/now-available-aws-serverless-application-repository/" style="color: #07a; text-decoration: underline;">AWS Serverless Application Repository Now Available</a>  <span class="tag tag-news" style="background-color: #09c; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> news </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">A new ecosystem of serverless apps and components that can be easily brought together and hosted on AWS. It’s now open to both consumers and providers.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Jeff Barr </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36932/web" title="kinsta.com/blog/php-7-hhvm-benchmarks/" style="color: #07a; text-decoration: underline;">The Definitive PHP 5.6, 7.0, 7.1, 7.2 and HHVM Benchmark</a>  <span class="tag tag-opinion" style="background-color: #970; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> opinion </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">How do different versions of PHP and HHVM stack up against each other in 2018? In most cases PHP 7.2 takes the crown <em>if</em> your apps support it.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Kinsta </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-featured" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.5em;">
+<table class="item section-featured" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 19px; line-height: 1.4em; font-weight: 500; margin: 0 0 2px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36933/web" title="jakearchibald.com/2018/third-party-css-is-not-safe/" style="color: #07a; text-decoration: underline;">Third Party CSS Is Not Safe</a>  <span class="tag tag-opinion" style="background-color: #970; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: none; font-family: verdana, tahoma, sans-serif; font-style: normal;"> opinion </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">A look at some of the ‘tricks’ untrusted CSS could attempt on a site to monitor users or change the site’s functionality in negative ways.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Jake Archibald </div></td></tr>
+</table>
+</td></tr></table>
+
+    </td>
+  </tr>
+</table>
+<table class="section section-jobs" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="name" style="border-collapse: collapse; margin: 0; padding: 12px 0px; font-size: 17px; font-weight: bold; text-transform: uppercase; border-bottom-width: 0px; color: #444;"><span>Jobs</span></td>
+  </tr>
+  <tr>
+    <td class="contents" style="border-collapse: collapse; margin: 0; padding: 0;">
+      <table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-jobs" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-jobs" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36934/web" title="zenmate-jobs.personio.de/job/8535?_pc=22496" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">DevOps Automation Engineer (Chef, Ruby, Python) in Berlin, Germany</a> </div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">Make the internet a more secure &amp; private place for more than 42M users globally with our VPN.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">ZenMate </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-jobs" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-jobs" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36935/web" title="www.vettery.com/tech?utm_medium=cooper-webopsweekly&amp;utm_campaign=ad-9311&amp;utm_source=newsletter&amp;utm_content=grouped&amp;utm_term=tech" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Find a Job You're Passionate About</a> </div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">Vettery connects you directly to hiring managers at over 4,000 top companies. Make a profile today and land your dream job.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">vettery </div></td></tr>
+</table>
+</td></tr></table>
+
+    </td>
+  </tr>
+</table>
+<table class="section section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="name" style="border-collapse: collapse; margin: 0; padding: 12px 0px; font-size: 17px; font-weight: bold; text-transform: uppercase; border-bottom-width: 0px; color: #444;"><span>In brief</span></td>
+  </tr>
+  <tr>
+    <td class="contents" style="border-collapse: collapse; margin: 0; padding: 0;">
+      <table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36936/web" title="aws.amazon.com/about-aws/whats-new/2018/02/postgresql-10-now-supported-in-amazon-rds/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">PostgreSQL 10 Now Supported on Amazon RDS</a>  <span class="tag tag-news" style="background-color: #09c; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> news </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Amazon Web Services </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36937/web" title="thenewstack.io/mesospheres-data-center-operating-system-will-offer-managed-kubernetes/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Mesosphere's DC/OS Will Soon Offer Managed Kubernetes</a>  <span class="tag tag-news" style="background-color: #09c; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> news </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">DC/OS (<a target="_blank" href="https://webopsweekly.com/link/36938/web" style="color: #07a;">Data Center Operating System</a>) is adding full support for Kubernetes in addition to Mesosphere’s own <em>Marathon</em>.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">The New Stack </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36939/web" title="www.geekwire.com/2018/dropbox-saved-almost-75-million-two-years-building-tech-infrastructure/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Dropbox Saved Almost $75M by Building Its Own Tech Infrastructure</a>  <span class="tag tag-news" style="background-color: #09c; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> news </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">GeekWire </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36940/web" title="blog.digitalocean.com/a-practical-droplet-performance-comparison/?utm_source=paid_newsletter+Dart+weekly&amp;utm_medium=display&amp;utm_campaign=Brand+tutorial+newsletter&amp;utm_content=2-28-2018+Webops+weekly+cooperpress" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">The Optimized Droplet Performance Test - See the Results</a> </div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">We tested the performance of an optimized vs standard droplet with tasks that are done most often on servers.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">DigitalOcean  <span class="tag tag-sponsored" style="background-color: #ffffff !important; padding: 0px 2px; border: 1px solid #090; font-size: 0.9em; color: #090 !important; line-height: 16px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal; border-radius: 2px;"> sponsored </span>
+</div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36941/web" title="blog.cloudflare.com/validating-leaked-passwords-with-k-anonymity/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Validating Leaked Passwords with k-Anonymity</a>  <span class="tag tag-tutorial" style="background-color: #2a5; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tutorial </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Junade Ali </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36942/web" title="blog.hasura.io/how-to-write-dockerfiles-for-python-web-apps-6d173842ae1d" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">How to Write Dockerfiles for Python Web Apps</a>  <span class="tag tag-tutorial" style="background-color: #2a5; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tutorial </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Praveen Durairaj </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36943/web" title="aws.amazon.com/blogs/security/how-to-get-ready-for-certificate-transparency/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Preparing for AWS's Support of Certificate Transparency</a>  <span class="tag tag-tutorial" style="background-color: #2a5; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tutorial </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">Includes an intro as to why certificate transparency is important, too.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Jonathan Kozolchyk </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36944/web" title="blog.zoph.me/cloud/Athena-ALB-ELB-Analysis/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Using Amazon Athena and QuickSight for ALB-ELB Access Log Analysis</a>  <span class="tag tag-tutorial" style="background-color: #2a5; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tutorial </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Victor Grenu </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36945/web" title="shopifyengineering.myshopify.com/blogs/engineering/future-proofing-our-cloud-storage-usage" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">How Shopify is Future Proofing Its Cloud Storage Usage</a>  <span class="tag tag-story" style="background-color: #0bc; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> story </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Shopify Engineering </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36946/web" title="deliveroo.engineering/2018/02/21/application-deployment.html" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Application Deployment at Deliveroo</a>  <span class="tag tag-story" style="background-color: #0bc; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> story </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">How a popular UK food delivery service uses Terraform.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Ben Cordero </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36947/web" title="hackernoon.com/what-i-learnt-from-building-3-high-traffic-web-applications-on-an-embedded-key-value-store-68d47249774f" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">What I Learnt Building High Traffic Apps on an Embedded Key/Value Store</a>  <span class="tag tag-story" style="background-color: #0bc; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> story </span>
+</div></td>
+  </tr>
+  <tr>
+    <td class="body" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 14px; color: #555; line-height: 1.4em; margin: 0 0 2px; padding: 0;">Namely <a target="_blank" href="https://webopsweekly.com/link/36948/web" style="color: #07a;">BoltDB</a>, a Go-based key/value database.</div></td>
+  </tr>
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Anthony Alaribe </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36949/web" title="www.gocd.org/2018/01/31/continuous-delivery-metrics/?utm_campaign=cd_metrics_blog&amp;utm_medium=email&amp;utm_source=cooperess_webops&amp;utm_content=cd_metrics_blog&amp;utm_term=" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Four Continuous Delivery Metrics that Improve Your Pipeline</a> </div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">GoCD  <span class="tag tag-sponsored" style="background-color: #ffffff !important; padding: 0px 2px; border: 1px solid #090; font-size: 0.9em; color: #090 !important; line-height: 16px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal; border-radius: 2px;"> sponsored </span>
+</div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36950/web" title="graphqlme.com/2018/02/17/how-graphql-solves-the-problem-of-sprawling-architecture-for-the-enterprise/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">How GraphQL Solves the Problem of Sprawling Architecture</a>  <span class="tag tag-opinion" style="background-color: #970; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> opinion </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Matt Engledowl </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36951/web" title="thenewstack.io/microservices-its-all-about-the-events/" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Microservices: It's All About the Events</a>  <span class="tag tag-opinion" style="background-color: #970; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> opinion </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Joab Jackson </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36952/web" title="github.com/jessfraz/img" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">img: Standalone Dockerfile and OCI Compatible Container Image Builder</a>  <span class="tag tag-tools" style="background-color: #589; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tools </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Jess Frazelle </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36953/web" title="github.com/fullstorydev/grpcurl" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">gRPCurl: Like curl, But for gRPC</a>  <span class="tag tag-tools" style="background-color: #589; color: white; font-size: 12px; line-height: 17px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal;"> tools </span>
+</div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Engineering at FullStory </div></td></tr>
+</table>
+</td></tr></table>
+<table style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'><tr><td class="itempad section-brief" valign="top" style="border-collapse: collapse; margin: 0; padding: 0 0 1.0em;">
+<table class="item section-brief" style='font-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 14px; line-height: 1.4em; color: #333333; border-spacing: 0px; table-layout: fixed;'>
+  <tr>
+    <td class="link" style="border-collapse: collapse; margin: 0; padding: 0;"><div style="font-size: 16px; line-height: 1.4em; font-weight: normal; margin: 0 0 0px; padding: 0;">
+<a target="_blank" class="main" href="https://webopsweekly.com/link/36954/web" title="welcome.linode.com/webopsweekly/?utm_source=cooperpress&amp;utm_medium=sponsored&amp;utm_term=webops-weekly&amp;utm_campaign=webops-weekly-brief" style="color: #07a; font-size: 16px; line-height: 1.4em; margin-bottom: 0px; font-weight: normal; text-decoration: underline;">Linux Cloud Hosting Starting at 1GB of RAM for $5/mo</a> </div></td>
+  </tr>
+  
+	  <tr><td class="source" style="border-collapse: collapse; text-transform: uppercase; margin: 0; padding: 0;"><div style="font-size: 12px; color: #090; line-height: 18px; font-style: normal; margin: 0; padding: 0;">Linode Cloud Hosting  <span class="tag tag-sponsored" style="background-color: #ffffff !important; padding: 0px 2px; border: 1px solid #090; font-size: 0.9em; color: #090 !important; line-height: 16px; text-transform: uppercase; display: inline-block; font-family: verdana, tahoma, sans-serif; font-style: normal; border-radius: 2px;"> sponsored </span>
+</div></td></tr>
+</table>
+</td></tr></table>
+
+    </td>
+  </tr>
+</table>
+
+
+    </td>
+  </tr>
+	
+</table>
+<!--[if mso]>
+  </td></tr></table>
+  </center>
+<![endif]-->
+</td></tr></table>
+
+
+</body></div>
+</main>
+</body>
+</html>

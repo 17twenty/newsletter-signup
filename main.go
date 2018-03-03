@@ -16,8 +16,14 @@ import (
 
 func LandingHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
+	log.Println(vars)
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "LandingHandler", vars)
+	data := struct {
+		NewsletterName string
+	}{
+		NewsletterName: "DevOps Weekly",
+	}
+	landingTemplate.Execute(w, data)
 }
 
 // ConfirmationHandler is <siteAddress>/confirm/TOKEN
@@ -79,8 +85,8 @@ var (
 	localAddressAndPort = "127.0.0.1:8000"
 
 	// Templates
-
-	testTemplate = template.Must(template.ParseFiles("templates/testing.html"))
+	landingTemplate = template.Must(template.ParseFiles("templates/landing.tmpl"))
+	testTemplate    = template.Must(template.ParseFiles("templates/testing.html"))
 )
 
 func main() {

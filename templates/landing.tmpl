@@ -3,22 +3,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>WebOps Weekly</title>
+  <title>{{ .NewsletterName }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="/css/app.css">
-  <link rel="alternate" type="application/rss+xml" title="WebOps Weekly" href="/rss/15mdb3ga">
-  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="stylesheet" href="/static/css/app.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/static/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <link rel="manifest" href="/static/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/static/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
-<body class="webops dom dom-webops index index0">
+<body class="Dart dom dom-Dart index index0">
   <header class="contained">
     <nav>
-    <div class="sitename" style="cursor: pointer" onclick="window.location.href='/'"><a href="/">WebOps Weekly</a></div>
+    <div class="sitename" style="cursor: pointer" onclick="window.location.href='/'"><a href="/">{{ .NewsletterName }}</a></div>
 
     <div class="items">
         
             <a href="/issues" class="issues">Archives</a><span class="divider">|</span>
-            <a href="/latest" class="latest">Latest</a><span class="nomobile"><span class="divider">|</span>
-            <a href="/rss/201m448c">RSS</a></span>
+            <a href="/issues/latest" class="latest">Latest</a>
         
     </div>
   </nav>
@@ -35,7 +49,7 @@
       <div class="sensor"></div>
       <div class="speaker"></div>
       <div class="screen" style="overflow: none;-webkit-overflow-scrolling:touch;">
-        <iframe src="/issues/latest?layout=bare"></iframe>
+        <iframe src="/static/issues/latest.html"></iframe>
       </div>
       <div class="home"></div>
       <div class="bottom-bar"></div>
@@ -49,16 +63,14 @@
   
   
   
-    <img src="/images/webops-keith.png" class="fplogo" width="120" />
+    <img src="/static/images/dart-logo.png" class="fplogo" width="120" />
   
   
 
-  <h1 class="title">WebOps Weekly</h1>
+  <h1 class="title">{{ .NewsletterName }}</h1>
   <h2 class="subtitle">A weekly newsletter on Web operations, infrastructure, performance, the backend, and tooling, from the browser down to the metal.</h2>
 
   <form class="subscribe" action="/subscribe" method="POST">
-    <input type="hidden" name="_csrf" value="pMpGYQWmdbLl31mbix4s_aLkJzIk-m9licPqipLiOlM" />
-
     <div class="fab">
       <div class="input">
       <input type="email" placeholder="Your email address" class="email" name="xemail" id="email" value="" required />
@@ -70,18 +82,18 @@
 
       
 
-    <div class="count">Join 13881 other subscribers today.</div>
+    <div class="count">Join our other subscribers today.</div>
   </form>
 
 
-  <p>Check out <a href="/issues/155">our latest issue (155)</a> for a sample.</p>
+  <p>Check out <a href="/issues/latest.html">our latest issue </a> for a sample.</p>
 
   
 
   
 
   <footer>
-    <p>Published by <a href="https://cooperpress.com/"> Cooperpress</a><br />Our <a href="/privacy">privacy</a> and <a href="/spam">anti-spam</a> policies. We take both seriously.</p>
+    <p>Published by <a href="https://saltypress.com/"> SaltyPress</a><br />Our <a href="/privacy">privacy</a> and <a href="/spam">anti-spam</a> policies. We take both seriously.</p>
 
     
 
@@ -92,10 +104,11 @@
 </div>
 </main>
   
-  <script src="/js/app.js"></script>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-32535004-14','webopsweekly.com');ga('send', 'pageview');
-</script>
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1213763378662807'); fbq('track', 'PageView');</script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1213763378662807&ev=PageView&noscript=1" /></noscript>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.getElementById('email').focus();
+    });
+  </script>
 
 </body>
 </html>
