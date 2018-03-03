@@ -1,0 +1,10 @@
+
+<h1>{{.PageTitle}}</h1>
+<h2>Archives</h2>
+<ul>
+    <img src="/static/download.jpeg" /> {{range .Todos}} {{if .Done}}
+    <li class="done">{{.Title}}</li>
+    {{else}}
+    <li>{{.Title}}</li>
+    {{end}} {{end}}
+</ul>

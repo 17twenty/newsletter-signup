@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strconv"
 	"time"
 
 	"github.com/alecthomas/template"
@@ -14,14 +13,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func LandingHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
+func landingHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "LandingHandler", vars)
+	landingTemplate.Execute(w, config)
 }
 
 // ConfirmationHandler is <siteAddress>/confirm/TOKEN
-func ConfirmationHandler(w http.ResponseWriter, r *http.Request) {
+func confirmationHandler(w http.ResponseWriter, r *http.Request) {
 	// Confirm in DB and give them a confirmation.html
 	vars := mux.Vars(r)
 
@@ -30,82 +28,150 @@ func ConfirmationHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
-func ThanksHandler(w http.ResponseWriter, r *http.Request) {
+func thanksHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintf(w, "thanks: %v\n", vars["category"])
 }
 
-func LatestHandler(w http.ResponseWriter, r *http.Request) {
+func privacyHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "thanks: %v\n", vars["category"])
+	fmt.Fprintf(w, "privacy", vars)
 }
 
-func ArchivesHandler(w http.ResponseWriter, r *http.Request) {
+func issueHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "thanks: %v\n", vars["category"])
-}
-
-func TestTemplateHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	log.Println(vars)
-	w.WriteHeader(http.StatusOK)
-
-	data := struct {
-		PageTitle string
-		Todos     []struct {
-			Title string
-			Done  bool
-		}
-	}{
-		PageTitle: "My TODO list",
-		Todos: []struct {
-			Title string
-			Done  bool
-		}{
-			{Title: "Task 1", Done: false},
-			{Title: "Task 2", Done: true},
-			{Title: "Task 3", Done: true},
-		},
+	var issue string
+	var ok bool
+	if issue, ok = vars["issue"]; !ok {
+		log.Println("Not ok, no val")
+		// TODO: Get latest
+		return
 	}
+	w.WriteHeader(http.StatusOK)
+	issuesTemplate.Execute(w, issue)
+}
 
-	testTemplate.Execute(w, data)
+func archivesHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	archivesTemplate.Execute(w, struct{}{})
 }
 
 var (
+	siteName            = "Dart Weekly Newsletter"
+	siteBlurb           = "All the latest news on the Dart programming language"
 	siteAddress         = "https://testdomain.com"
 	localAddressAndPort = "127.0.0.1:8000"
 
-	// Templates
+	config = struct {
+		NewsletterName string
+		SiteBlurb      string
+		SiteAddress    string
+	}{
+		NewsletterName: "Dart Weekly Newsletter",
+		SiteBlurb:      "All the latest news on the Dart programming language",
+		SiteAddress:    "https://testdomain.com",
+	}
 
-	testTemplate = template.Must(template.ParseFiles("templates/testing.html"))
+	// Templates
+	landingTemplate  = template.Must(template.ParseFiles("templates/landing.tmpl"))
+	confirmTemplate  = template.Must(template.ParseFiles("templates/confirm.tmpl"))
+	thanksTemplate   = template.Must(template.ParseFiles("templates/thankyou.tmpl"))
+	privacyTemplate  = template.Must(template.ParseFiles("templates/privacy.tmpl"))
+	issuesTemplate   = template.Must(template.ParseFiles("templates/issues.tmpl"))
+	archivesTemplate = template.Must(template.ParseFiles("templates/archives.tmpl"))
 )
 
 func main() {
 
+	log.SetFlags(log.Lshortfile | log.Lmicroseconds)
 	database, _ := sql.Open("sqlite3", "./content.db")
-	statement, _ := database.Prepare("CREATE TABLE IF NOT EXISTS people (id INTEGER PRIMARY KEY, firstname TEXT, lastname TEXT)")
-	statement.Exec()
-	statement, _ = database.Prepare("INSERT INTO people (firstname, lastname) VALUES (?, ?)")
-	statement.Exec("Demo", "Person")
-	rows, _ := database.Query("SELECT id, firstname, lastname FROM people")
-	var id int
-	var firstname string
-	var lastname string
+	statement, _ := database.Prepare(
+		`CREATE TABLE IF NOT EXISTS posts (
+			id INTEGER PRIMARY KEY,
+			issue_number INTEGER,
+			post_title TEXT, 
+			post_link TEXT,
+			description TEXT,
+			post_date TEXT
+		)`,
+	)
+	res, err := statement.Exec()
+	log.Println("Created Table result:", res, err)
+
+	// Add demo post
+	_, err = database.Exec(
+		`INSERT INTO posts
+		(
+			issue_number,
+			post_title,
+			post_link,
+			description,
+			post_date
+		)
+		VALUES
+		(?,?,?,?,?)
+		`,
+		1, // First issue
+		"Hairy Balls",
+		"http://www.spaceship.com.au",
+		"This is the description",
+		SqlLiteDate(time.Now()),
+	)
+	if err != nil {
+		log.Println("Insert failed", err)
+	}
+	rows, err := database.Query(`
+		SELECT 
+			issue_number,
+			post_title,
+			post_link,
+			description,
+			post_date
+		FROM posts`,
+	)
+	if err != nil {
+		log.Println("uh oh:", err)
+	}
+	var (
+		issueNumber int
+		postTitle   string
+		postLink    string
+		description string
+		postDate    SqlLiteDate
+	)
 	for rows.Next() {
-		rows.Scan(&id, &firstname, &lastname)
-		fmt.Println(strconv.Itoa(id) + ": " + firstname + " " + lastname)
+		err = rows.Scan(
+			&issueNumber,
+			&postTitle,
+			&postLink,
+			&description,
+			&postDate,
+		)
+		if err != nil {
+			log.Println("Uh oh", err)
+			continue
+		}
+		fmt.Println(
+			issueNumber,
+			postTitle,
+			postLink,
+			description,
+			postDate,
+		)
 	}
 
 	r := mux.NewRouter()
-	r.HandleFunc("/", LandingHandler)
-	r.HandleFunc("/confirm/{confirmationID}", ConfirmationHandler) // takes a confirmationID
-	r.HandleFunc("/thankyou", ThanksHandler).Methods("POST")
-	r.HandleFunc("/latest", LatestHandler)
-	r.HandleFunc("/archives", ArchivesHandler)
-	r.HandleFunc("/testing", TestTemplateHandler)
+	// Landing Page
+	r.HandleFunc("/", landingHandler)
+	// Privacy Page
+	r.HandleFunc("/privacy", privacyHandler)
+	r.HandleFunc("/confirm/{confirmationID}", confirmationHandler) // takes a confirmationID
+	r.HandleFunc("/thankyou", thanksHandler).Methods("POST")
+	r.HandleFunc("/latest", issueHandler)
+	r.HandleFunc("/issues/{issue:[0-9]+}", issueHandler)
+	r.HandleFunc("/archives", archivesHandler)
 
 	// This will serve files under http://localhost:8000/static/<filename>
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static/"))))
