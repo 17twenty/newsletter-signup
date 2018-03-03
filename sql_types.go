@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql/driver"
-	"log"
 	"time"
 )
 
@@ -18,6 +17,10 @@ func (b *SqlLiteDate) Scan(value interface{}) error {
 
 // Value is used to the date tiem as a string so it goes into the database
 func (b SqlLiteDate) Value() (driver.Value, error) {
-	log.Println("Value:", time.Time(b).Format("2006-01-02"))
+	// log.Println("Value:", time.Time(b).Format("2006-01-02"))
 	return time.Time(b).Format("2006-01-02"), nil
+}
+
+func (b SqlLiteDate) String() string {
+	return time.Time(b).Format("2006-01-02")
 }
