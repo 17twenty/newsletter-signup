@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ .NewsletterName }}</title>
+  <title>{{ .StaticInfo.NewsletterName }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/static/css/app.css">
   <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png">
@@ -26,14 +26,7 @@
 <body class="Dart dom dom-Dart index index0">
   <header class="contained">
     <nav>
-    <div class="sitename" style="cursor: pointer" onclick="window.location.href='/'"><a href="/">{{ .NewsletterName }}</a></div>
-
-    <div class="items">
-        
-            <a href="/issues" class="issues">Archives</a><span class="divider">|</span>
-            <a href="/issues/latest" class="latest">Latest</a>
-        
-    </div>
+    <div class="sitename" style="cursor: pointer" onclick="window.location.href='/'"><a href="/">{{ .StaticInfo.NewsletterName }}</a></div>
   </nav>
 
   
@@ -48,7 +41,7 @@
       <div class="sensor"></div>
       <div class="speaker"></div>
       <div class="screen" style="overflow: none;-webkit-overflow-scrolling:touch;">
-        <iframe src="/static/issues/latest.html"></iframe>
+        <iframe src="/latest"></iframe>
       </div>
       <div class="home"></div>
       <div class="bottom-bar"></div>
@@ -66,8 +59,8 @@
   
   
 
-  <h1 class="title">{{ .NewsletterName }}</h1>
-  <h2 class="subtitle">{{ .SiteBlurb }}</h2>
+  <h1 class="title">{{ .StaticInfo.NewsletterName }}</h1>
+  <h2 class="subtitle">{{ .NewsletterBlurb }}</h2>
 
   <form class="subscribe" action="/subscribe" method="POST">
     <div class="fab">
@@ -81,24 +74,18 @@
 
       
 
-    <div class="count">Join our other subscribers today.</div>
+    <div class="count">Join our subscriber community today.</div>
   </form>
 
 
-  <p>Check out <a href="/issues/latest.html">our latest issue </a> for a sample.</p>
+  <p>Check out <a href="/latest">our latest issue </a> for a sample.</p>
 
   
 
   
 
   <footer>
-    <p>Published by <a href="https://saltypress.com/"> SaltyPress</a><br />Our <a href="/privacy">privacy</a> and <a href="/spam">anti-spam</a> policies. We take both seriously.</p>
-
-    
-
-    
-
-    
+    <p>Published by <a href="{{.StaticInfo.PublisherURL}}"> {{.StaticInfo.PublisherName}}</a><br />Our <a href="/privacy">privacy</a> and <a href="/spam">anti-spam</a> policies. We take both seriously.</p>
   </footer>
 </div>
 </main>

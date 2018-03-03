@@ -13,9 +13,48 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// StaticInfo ...
+type StaticInfo struct {
+	NewsletterName string
+	PublisherURL   string
+	PublisherName  string
+}
+
+var (
+	siteName            = "Dart Weekly Newsletter"
+	siteBlurb           = "All the latest news on the Dart programming language"
+	siteAddress         = "https://testdomain.com"
+	localAddressAndPort = "127.0.0.1:8000"
+
+	// Templates
+	landingTemplate  = template.Must(template.ParseFiles("templates/landing.tmpl"))
+	confirmTemplate  = template.Must(template.ParseFiles("templates/confirm.tmpl"))
+	thankyouTemplate = template.Must(template.ParseFiles("templates/thankyou.tmpl"))
+	privacyTemplate  = template.Must(template.ParseFiles("templates/privacy.tmpl"))
+	issuesTemplate   = template.Must(template.ParseFiles("templates/issues.tmpl"))
+	archivesTemplate = template.Must(template.ParseFiles("templates/archives.tmpl"))
+	latestTemplate   = template.Must(template.ParseFiles("templates/latest.tmpl"))
+
+	newsletterInfo = StaticInfo{
+		NewsletterName: "Dart Weekly",
+		PublisherURL:   "https://saltypress.com",
+		PublisherName:  "SaltyPress",
+	}
+)
+
 func landingHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	log.Println(vars)
 	w.WriteHeader(http.StatusOK)
-	landingTemplate.Execute(w, config)
+	data := struct {
+		StaticInfo      StaticInfo
+		NewsletterBlurb string
+	}{
+		StaticInfo:      newsletterInfo,
+		NewsletterBlurb: siteBlurb,
+	}
+	fmt.Printf("%#+v", data)
+	landingTemplate.Execute(w, data)
 }
 
 // ConfirmationHandler is <siteAddress>/confirm/TOKEN
@@ -30,14 +69,26 @@ func confirmationHandler(w http.ResponseWriter, r *http.Request) {
 
 func thanksHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
+	log.Println(vars)
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "thanks: %v\n", vars["category"])
+	data := struct {
+		StaticInfo StaticInfo
+	}{
+		StaticInfo: newsletterInfo,
+	}
+	thankyouTemplate.Execute(w, data)
 }
 
 func privacyHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
+	log.Println(vars)
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "privacy", vars)
+	data := struct {
+		StaticInfo StaticInfo
+	}{
+		StaticInfo: newsletterInfo,
+	}
+	privacyTemplate.Execute(w, data)
 }
 
 func issueHandler(w http.ResponseWriter, r *http.Request) {
@@ -53,35 +104,20 @@ func issueHandler(w http.ResponseWriter, r *http.Request) {
 	issuesTemplate.Execute(w, issue)
 }
 
+func latestHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	data := struct {
+		StaticInfo StaticInfo
+	}{
+		StaticInfo: newsletterInfo,
+	}
+	latestTemplate.Execute(w, data)
+}
+
 func archivesHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	archivesTemplate.Execute(w, struct{}{})
 }
-
-var (
-	siteName            = "Dart Weekly Newsletter"
-	siteBlurb           = "All the latest news on the Dart programming language"
-	siteAddress         = "https://testdomain.com"
-	localAddressAndPort = "127.0.0.1:8000"
-
-	config = struct {
-		NewsletterName string
-		SiteBlurb      string
-		SiteAddress    string
-	}{
-		NewsletterName: "Dart Weekly Newsletter",
-		SiteBlurb:      "All the latest news on the Dart programming language",
-		SiteAddress:    "https://testdomain.com",
-	}
-
-	// Templates
-	landingTemplate  = template.Must(template.ParseFiles("templates/landing.tmpl"))
-	confirmTemplate  = template.Must(template.ParseFiles("templates/confirm.tmpl"))
-	thanksTemplate   = template.Must(template.ParseFiles("templates/thankyou.tmpl"))
-	privacyTemplate  = template.Must(template.ParseFiles("templates/privacy.tmpl"))
-	issuesTemplate   = template.Must(template.ParseFiles("templates/issues.tmpl"))
-	archivesTemplate = template.Must(template.ParseFiles("templates/archives.tmpl"))
-)
 
 func main() {
 
@@ -162,14 +198,19 @@ func main() {
 		)
 	}
 
+	redirectHome := http.RedirectHandler("/", 307)
+
 	r := mux.NewRouter()
 	// Landing Page
 	r.HandleFunc("/", landingHandler)
 	// Privacy Page
 	r.HandleFunc("/privacy", privacyHandler)
 	r.HandleFunc("/confirm/{confirmationID}", confirmationHandler) // takes a confirmationID
-	r.HandleFunc("/thankyou", thanksHandler).Methods("POST")
-	r.HandleFunc("/latest", issueHandler)
+
+	r.HandleFunc("/subscribe", thanksHandler).Methods("POST")
+	r.Handle("/subscribe", redirectHome).Methods("GET")
+
+	r.HandleFunc("/latest", latestHandler)
 	r.HandleFunc("/issues/{issue:[0-9]+}", issueHandler)
 	r.HandleFunc("/archives", archivesHandler)
 
