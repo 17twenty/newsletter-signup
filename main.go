@@ -23,7 +23,7 @@ type StaticInfo struct {
 var (
 	siteName            = "Dart Weekly Newsletter"
 	siteBlurb           = "All the latest news on the Dart programming language"
-	siteAddress         = "https://testdomain.com"
+	hostingAddress      = "https://testdomain.com"
 	localAddressAndPort = "127.0.0.1:8000"
 
 	// Templates
@@ -96,8 +96,7 @@ func issueHandler(w http.ResponseWriter, r *http.Request) {
 	var issue string
 	var ok bool
 	if issue, ok = vars["issue"]; !ok {
-		log.Println("Not ok, no val")
-		// TODO: Get latest
+		log.Println("TODO: Get latest")
 		return
 	}
 	w.WriteHeader(http.StatusOK)
@@ -133,8 +132,8 @@ func main() {
 			post_date TEXT
 		)`,
 	)
-	res, err := statement.Exec()
-	log.Println("Created Table result:", res, err)
+	_, err := statement.Exec()
+	log.Println("Created Table result:", err)
 
 	// Add demo post
 	_, err = database.Exec(
@@ -150,9 +149,9 @@ func main() {
 		(?,?,?,?,?)
 		`,
 		1, // First issue
-		"Hairy Balls",
-		"http://www.spaceship.com.au",
-		"This is the description",
+		"First Post",
+		"http://www.reddit.com/r/flutterdev",
+		"The main site for flutter development",
 		SqlLiteDate(time.Now()),
 	)
 	if err != nil {
